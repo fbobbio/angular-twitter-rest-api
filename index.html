@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="angular-twitter">
+  <head>
+    <title>Twitter Api with Angular</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div ng-controller="AngularTwitterController">
+      <div class="panel panel-default">
+        <div class="panel-heading">Trending Topic Hashtag</div>
+        <div class="panel-body">
+          <p>Agregar Hashtag:</p>
+           <div class="form-inline">
+             <input class="form-control" type="text" ng-model="newHashTag" />
+             <button class="btn btn-default" ng-click="addHashTag(newHashTag)">Agregar</button>
+           </div>
+        </div>
+      	<ul class="list-group">
+      	  <li class="list-group-item" ng-repeat="tweet in tweets">
+      	    <!-- We can now use player.likeScore instead of likeScore(player) -->
+      	    {{tweet}}
+      	    <a href="" ng-click="removeHashTag(hashTag)">
+      	      <i class="glyphicon glyphicon-remove pull-right"></i>
+      	    </a>
+      	  </li>
+      	</ul>
+      </div>
+    </div>
+  </body>
+</html>
